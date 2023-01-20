@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Javascript exam2</title>
+  </head>
+  <body>
+    <h1>이름,몸무게,나이 출력하기</h1>
+    <script>
+      // 변수선언
+      let name = prompt("이름은?");
+      let weight = prompt("몸무게는?");
+      let age = prompt("나이는?");
+      // 처리
+
+      // 출력
+      // document.write("이름 : ",name,  "<br>");
+      // document.write("몸무게 : ",weight,  "<br>");
+      // document.write("나이 : ",age,  "<br>");
+
+      // document.write(`이름 : ${name} 몸무게 : ${weight} 나이 : ${age} <br>`);
+
+      let result = `이름 : ${name} <br>`;
+      result += `몸무게 : ${weight} <br>`;
+      result += `나이 : ${age} <br>`;
+
+      document.write(result);
+    </script>
+
+    <h2>생년월일로 나이계산하기</h2>
+    <script>
+      // 변수선언
+      let year = 2023;  // 현재년
+      let month = 1;    // 현재월
+      let day = 20;     // 현재일
+
+      let byear = Number(prompt("생년year은?"));
+      let bmonth = Number(prompt("생월month은?"));
+      let bday = Number(prompt("생일day은?"));
+
+      // let age = 0;
+
+      // 처리 - 나이계산(2023, 2002)
+      // 만나이 = 현재년도 - 출생연도 - 1;
+      // 단, 생일이 지났으면 만나이 + 1
+      age = year - byear;
+      age = (month > bmonth && day > bday) ? age : age - 1;
+
+
+      //결과 출력
+          result = `현재년월일 : ${year}년 ${month}월 ${day}일 <br>`;
+          result += `생년월일 : ${byear}년 ${bmonth}월 ${bday}일 <br>`;
+          result += `나이 : ${age}`;
+
+      document.write(result);
+
+
+    </script>
+
+    <h2>구구단 계산하기</h2>
+    <script>
+      let dan = 7;
+
+      // result = `7 x 1 = 7 <br>`
+      // result += `7 x 2 = 14 <br>`
+      // result += `7 x 3 = 21 <br>`
+
+      result = `${dan} x 1 = ${dan * 1} <br>`;
+      result += `${dan} x 2 = ${dan * 2} <br>`;
+      result += `${dan} x 3 = ${dan * 3} <br>`;
+      result += `${dan} x 4 = ${dan * 4} <br>`;
+      result += `${dan} x 5 = ${dan * 5} <br>`;
+      result += `${dan} x 6 = ${dan * 6} <br>`;
+      result += `${dan} x 7 = ${dan * 7} <br>`;
+      result += `${dan} x 8 = ${dan * 8} <br>`;
+      result += `${dan} x 9 = ${dan * 9} <br>`;
+
+      document.write(result);
+
+    </script>
+
+<!--    <script>
+      let gugudan = prompt("구구단");
+
+      document.write(`${gugudan}*1 : ${gugudan * 1} <br>`);
+      document.write(`${gugudan}*2 : ${gugudan * 2} <br>`);
+      document.write(`${gugudan}*3 : ${gugudan * 3} <br>`);
+      document.write(`${gugudan}*4 : ${gugudan * 4} <br>`);
+      document.write(`${gugudan}*5 : ${gugudan * 5} <br>`);
+      document.write(`${gugudan}*6 : ${gugudan * 6} <br>`);
+      document.write(`${gugudan}*7 : ${gugudan * 7} <br>`);
+      document.write(`${gugudan}*8 : ${gugudan * 8} <br>`);
+      document.write(`${gugudan}*9 : ${gugudan * 9} <br>`);
+    </script>-->
+
+    <h2>시간 계산하기</h2>
+    <script>
+      let daysec = 86400;
+      let hoursec = 3600;
+      let minsec = 60;
+
+      data1 = 1234567890;
+      data2 = 98765;
+      data3 = 12345;
+
+      // parseInt : 값을 정수형으로 변환
+      result = `${data1}초는 약 ${parseInt(data1 / daysec)}일이다 <br>`;
+      result += `${data2}초는 약 ${parseInt(data2 / hoursec)}시간이다 <br>`;
+      result += `${data3}초는 약 ${parseInt(data3 / minsec)}분이다 <br>`;
+
+      document.write(result);
+    </script>
+  </body>
+</html>
