@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 함수</title>
+</head>
+<body>
+<h1>자바스크립트 함수</h1>
+<h2>개요</h2>
+<p>특정 작업(코드블록)을 여러번 반복해야 하는 경우
+    해당 작업을 재사용 가능한 구조로 만들때 사용</p>
+<p>즉, 어떤 작업을 수행하기 위해
+    필요한 코드들의 집합을 의미하고,
+    이것들을 재사용하기 위해 모듈형태로 작성한 것</p>
+
+<p>function 함수명(매개변수들,...) {</p>
+<p>   코드들  </p>
+<p>}</p>
+
+<script>
+    // 인삿말 v1
+    // 함수 정의
+    function sayHello() {
+        document.write('Hello, World!! <br>');
+    }
+
+    // 함수 호출 : 함수명
+    sayHello();
+</script>
+
+<script>
+    // 인삿말 v2
+    function sayHello2(msg) {
+        document.write(`Hello, ${msg}!! <br>`);
+    }
+
+    // 함수 호출 : 함수명(인자)
+    sayHello2('Java');
+    sayHello2('HTML');
+    sayHello2('CSS');
+</script>
+
+<script>
+    // 인삿말 v3
+    function sayHello3(msg) {
+        return `Hello, ${msg}!! <br>`;
+    }
+
+    document.write('👍', sayHello3('JavaScript'));
+    document.write('💖', sayHello3('Node.js'));
+    document.write('💕', sayHello3('react'));
+</script>
+
+<script>
+    // 년도를 입력하면 윤년여부를 계산해서 출력
+    // 윤년여부를 계산하는 함수 : computeLeapYear
+    function computeLeapYear(year) {
+        let result = '평년입니다';
+
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            result = '윤년입니다';
+        }
+
+        return `${year}년은 ${result}`;
+    }
+
+    let year = 2020;
+    let result = computeLeapYear(year);  // 함수호출 및 결과받음
+    document.write(result, '<br>');
+</script>
+<script>
+    // 층 수를 입력받아
+    // 별* 피라미드 출력 : showStarPyramid
+    function showStarPyramid(floor) {
+        let result = '';
+
+        for (let j = 1; j <= floor; ++j) {  // 층 반복문
+            for (let i = 1; i <= j; ++i) { // 별 반복문
+                result += '*';
+            }
+            result += '<br>';
+        }
+
+        document.write(result);
+    }
+
+    showStarPyramid(10);
+    showStarPyramid(7);
+    showStarPyramid(3);
+</script>
+<script>
+    // 시분초를 입력받아
+    // 오전, 오후 구분하여 출력 : showAMPM
+    function showAMPM(time) {
+        let result = '오후입니다!!';
+        let hour = time[0] + time[1];
+
+        if (hour < 12) { result = '오전입니다!!'; }
+
+        return `${hour}시는 ${result}`;
+    }
+
+    document.write(showAMPM('09:49:55'), '<br>');
+    document.write(showAMPM('16:31:21'), '<br>');
+</script>
+<script>
+    // 국어, 영어, 수학을 입력하면
+    // 학점을 출력하는 함수 : computeSungJuk
+    function computeSungJuk(kor, eng, mat) {
+        let tot = 0, avg = 0, grd = '가';  // 다중변수 선언
+
+        tot = kor + eng + mat;
+        avg = tot / 3;
+        switch (parseInt(avg / 10)) {
+            case 10:
+            case 9: grd = '수'; break;
+            case 8: grd = '우'; break;
+            case 7: grd = '미'; break;
+            case 6: grd = '양'; break;
+        }
+
+        document.write(`총점은 ${tot}, 평균은 ${avg}
+                    학점은 ${grd}입니다 <br>`);
+    }
+
+    computeSungJuk(99,98,99);
+    computeSungJuk(33,44,55);
+</script>
+
+</body>
+</html>
